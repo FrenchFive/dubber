@@ -12,7 +12,7 @@ def get_audio_files(path):
     return(audio_files)
 
 script_path = os.path.dirname(__file__)
-lang = 'FR'
+lang = 'ES'
 path = f'{script_path}/project/3c3ff11d-662e-4798-97fc-f637550cceba/{lang}/audio_files'
 audio_files = get_audio_files(path)
 

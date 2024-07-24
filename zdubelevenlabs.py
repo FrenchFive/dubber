@@ -17,7 +17,13 @@ def audio(text, voiceid, lang):
         payload = {
             "text": text,
             "model_id": "eleven_turbo_v2_5",
-            "language_code": lang
+            "language_code": lang,
+            "voice_settings": {
+                "stability": 0.5,
+                "similarity_boost": 0.5,
+                "style": 0.5,
+                "use_speaker_boost": True
+            },
         }
         
         headers = { 
