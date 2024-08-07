@@ -1,5 +1,5 @@
-import os 
 def speed(path):
+    import os
     import json
     from pydub import AudioSegment
     
@@ -23,10 +23,3 @@ def speed(path):
             ac_duration = AudioSegment.from_file(f'{path}/audio_files/{audio_files[count]}').duration_seconds
             print(f'{audio_files[count]} :: {ac_duration} :: {duration}')
         count += 1
-
-
-
-script_path = os.path.dirname(__file__)
-lang = 'ES'
-path = f'{script_path}/project/270855f2-d3b0-41ac-9235-083346bb3725/{lang}'
-speed(path)

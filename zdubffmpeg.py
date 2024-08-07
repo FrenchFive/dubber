@@ -12,15 +12,15 @@ def get_audio_files(path):
     return(audio_files)
 
 script_path = os.path.dirname(__file__)
-lang = 'ES'
-path = f'{script_path}/project/3c3ff11d-662e-4798-97fc-f637550cceba/{lang}/audio_files'
+lang = 'FR'
+path = f'{script_path}/project/a0a3d89f-80c6-43d5-99ec-535a71a4c9ac/{lang}/audio_files'
 audio_files = get_audio_files(path)
 
-lang_folder = f'{script_path}/project/3c3ff11d-662e-4798-97fc-f637550cceba/{lang}'
+lang_folder = f'{script_path}/project/a0a3d89f-80c6-43d5-99ec-535a71a4c9ac/{lang}'
 with open(f'{lang_folder}/transcription.json', 'r') as json_file:
     lang_transcription = json.load(json_file)
 
-original_audio_file = f'{script_path}/project/3c3ff11d-662e-4798-97fc-f637550cceba/original.wav'
+original_audio_file = f'{script_path}/project/a0a3d89f-80c6-43d5-99ec-535a71a4c9ac/original.wav'
 duration = AudioSegment.from_file(original_audio_file).duration_seconds * 1000
 print(duration)
 

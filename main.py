@@ -8,6 +8,7 @@ from unidecode import unidecode
 import zdubdeepl as deepl
 import zdubelevenlabs as elevenlabs
 import zdubwhisper as whisper
+import zdubspeed as speed
 
 #SETUP A PROJECT
 script_path = os.path.dirname(__file__)
@@ -59,13 +60,19 @@ for lang in langs:
     
     for segment in lang_transcription:
         count += 1
-        voiceid = 'XrExE9yKIg1WjnnlVkGX'
+        voiceid = '7uFfE599pJQzqxmqloCJ'
 
         text = unidecode(str(segment['text']))
 
         audio = elevenlabs.audio(text, voiceid, (lang.lower()))
         with open(f'{audio_folder}/elevenlabs_{lang}_{str(count).zfill(5)}.mp3', 'wb') as audio_file:
             audio_file.write(audio)
+
+#SPEED UP THE AUDIO
+for lang in langs:
+    lang_folder = os.path.join(project_folder, lang)
+    speed.speed(lang_folder)
+
         
         
 #MIX THE AUDIO TO THE FILE (FFMEG ??? )
